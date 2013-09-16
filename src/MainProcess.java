@@ -13,31 +13,45 @@ import javax.mail.internet.MimeMessage;
 
 public class MainProcess 
 {
+	public static enum State {INIT,WATCH_PROCESSES,RESTART_PROCESS};
+	public static State currentState;
+	
 	public static void main(String[] args)
 	{   
-		try 
+		currentState = State.INIT;
+		
+		for(;;)
 		{
-			EmailSender emailSender = new EmailSender();
-			
-			for(;;)
+			switch(currentState)
 			{
-				emailSender.Send("gabriel.laprise", "GAla25!!", "gabriel.laprise@outlook.com", "MainProcess Message", "Sending from main process @ " + Calendar.getInstance().getTime().toString());
-				Thread.sleep(15*60*1000);
+				case INIT:
+					
+				case WATCH_PROCESSES:
+					
+				case RESTART_PROCESS:
+					
+				default:
+				break;
 			}
-		   
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
+		}
 	}
 	
-
-
+	private void  Init()
+	{
+		//Create Data Structure
+		
+		
+		//Create processes and fill data structures
+		
+		//Send email with specs
+		
+		//Exit state to Watch
+	}
+	
+	
 	
 }
+
+
+
+
