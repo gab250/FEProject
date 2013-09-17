@@ -31,6 +31,8 @@ public class Server
 			ProcessBuilder procesBuilder = new ProcessBuilder("java","-jar","dist/Client.jar","49152");
 			process = procesBuilder.start();
 			
+			Thread.sleep(5*1000);
+			
 		    while(true)
 			{
 				socket = new Socket("127.0.0.1", 49152);
