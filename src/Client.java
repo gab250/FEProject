@@ -36,7 +36,7 @@ public class Client
 		try 
 		{
 			//Main Porcess
-			for(int i=0; i<2*15*60; ++i)
+			for(int i=0; i<2*2*60; ++i)
 			{
 				Thread.sleep(500);
 				writeQueue(0);
