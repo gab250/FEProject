@@ -31,8 +31,7 @@ public class Supervisor implements SupervisorInterface
 	
 	public Supervisor() 
 	{
-		
-		
+				
 	}
 	
 	private void run() throws Exception 
@@ -60,8 +59,6 @@ public class Supervisor implements SupervisorInterface
 		{
 			System.err.println("Erreur: " + e.getMessage());
 		}
-		
-		
 	}
 	
 	private void createWorkers(int in_nbWorkers) throws IOException 
@@ -98,6 +95,7 @@ public class Supervisor implements SupervisorInterface
 	@Override
 	public boolean replaceWorker(Worker worker) 
 	{
+		mapWorkers_.get(worker.getID()).destroy();
 		mapWorkers_.put(worker.getID(), createProcess(worker.getID()));
 		
 		if(mapWorkers_.get(worker.getID()) == null)
