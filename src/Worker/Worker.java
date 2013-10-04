@@ -1,4 +1,8 @@
 package Worker;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -31,11 +35,11 @@ public class Worker
 				
 				if(!worker.callForReplacement())
 				{
-					System.out.println("Worker : " + Integer.valueOf(ID_) + " couldn't be replaced.");
+					writeToFile("Worker : " + Integer.valueOf(ID_) + " couldn't be replaced.");
 				}
 				else
 				{
-					System.out.println("Worker : " + Integer.valueOf(ID_) + " replaced.");
+					writeToFile("Worker : " + Integer.valueOf(ID_) + " replaced.");
 				}
 			}
 		} 
@@ -44,7 +48,6 @@ public class Worker
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 	}
 	
@@ -110,5 +113,26 @@ public class Worker
 		}
 		
 		return result;
+	}
+	
+	private static void writeToFile(String text)
+	{
+		try {
+			 
+			File file = new File("log.txt");
+ 
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+ 
+			FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(text);
+			bw.close();
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
