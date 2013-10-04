@@ -33,6 +33,10 @@ public class Worker
 				{
 					System.out.println("Worker : " + Integer.valueOf(ID_) + " couldn't be replaced.");
 				}
+				else
+				{
+					System.out.println("Worker : " + Integer.valueOf(ID_) + " replaced.");
+				}
 			}
 		} 
 		catch (InterruptedException e) 
