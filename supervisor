@@ -1,0 +1,9 @@
+# Option a ajuster et ajouter pour lancer un serveur a distance.
+#  -Djava.rmi.server.hostname=mycomputer.example.com \
+
+export PATH=$PATH:/usr/lib/jdk1.7.0_40/jre/bin/
+
+java -cp $(pwd)/dist/Supervisor.jar:$(pwd)/dist/SupervisorInterface.jar \
+  -Djava.rmi.server.codebase=file:$(pwd)/dist/SupervisorInterface.jar \
+  -Djava.security.policy=$(pwd)/policy \
+	Supervisor.Supervisor 1
