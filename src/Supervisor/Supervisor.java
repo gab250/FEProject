@@ -72,9 +72,9 @@ public class Supervisor implements SupervisorInterface
 		for(int i=0; i<in_nbWorkers; ++i)
 		{
 			ProcessBuilder procesBuilder = new ProcessBuilder("java","-jar","dist/Worker.jar",Integer.toString(i));
+			System.out.println("Process : " + Integer.toString(i) + " created.");
 			mapWorkers_.put(i,procesBuilder.start());
 		}
-				
 	}
 	
 	private static Process createProcess(int in_ID)
