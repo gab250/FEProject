@@ -1,8 +1,11 @@
+package Worker;
 import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+
+import Shared.SupervisorInterface;
 
 
 public class Worker 

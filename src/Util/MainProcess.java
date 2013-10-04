@@ -1,3 +1,4 @@
+package Util;
 
 import com.sun.mail.smtp.SMTPTransport;
 import java.security.Security;

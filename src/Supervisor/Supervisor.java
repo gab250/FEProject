@@ -1,3 +1,5 @@
+package Supervisor;
+
 import java.io.IOException;
 import java.rmi.ConnectException;
 import java.rmi.registry.LocateRegistry;
@@ -6,6 +8,9 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
+
+import Shared.SupervisorInterface;
+import Worker.Worker;
 
 
 public class Supervisor implements SupervisorInterface

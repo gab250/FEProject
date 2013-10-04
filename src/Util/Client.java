@@ -1,3 +1,4 @@
+package Util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +14,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+
 
 
 public class Client 
